@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
 import './index.css'
 import {createBrowserRouter, RouterProvider}  from 'react-router-dom'
 import Tarefas from './tarefas/tarefas-componente.jsx'
@@ -18,15 +17,11 @@ const routes = createBrowserRouter([
         element: <Tarefas/>
       },
       {
-        path: '/rota2',
-        element: <h1>Minha rota 2</h1>
-      },
-      {
         path: '/consulta-ram',
         element: <ConsultaRAM/>
       },
       {
-        path: '/consulta_id',
+        path: '/consulta_id/:personagemId',
         element: <Consulta_id/>
       }
     ]

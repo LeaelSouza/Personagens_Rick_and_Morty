@@ -1,33 +1,35 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
-function ConsultaRAM(){
+function ConsultaId(){
     const [personagens, setPersonagens] = useState([]);
     
+    let params = useParams();
+
+    console.log(params);
 
     useEffect(() => {
-        fetch('https://rickandmortyapi.com/api/character')
+        fetch('https://rickandmortyapi.com/api/character/'+params.personagemId)
         .then((resposta) => {
             return resposta.json();
         })//transformas em javascript
 
         .then((resultadoConsulta) => {//Name
-           setPersonagens(resultadoConsulta.results); 
+           setPersonagens(resultadoConsulta); 
         });
     }, []);
      
      return <>
-            {
-                personagens.map(personagem => {
-                    return <> 
-                    <h2>{<img src={personagem.image}/>},<br/>
-                    {personagem.name},<br/>
-                    {personagem.gender},<br/>
-                    {personagem.status},<br/>
-                    {personagem.species}</h2>
-                    </>
-                })
-            }
+                    <h2>{<img src={personagens.image}/>},<br/>
+                    {personagens.id},<br/>
+                    {personagens.name},<br/>
+                    {personagens.gender},<br/>
+                    {personagens.status},<br/>
+                    {personagens.species}</h2>
            </>
 }
 
-export default ConsultaRAM;
+export default ConsultaId;
+
+
+
