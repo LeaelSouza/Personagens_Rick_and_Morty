@@ -1,0 +1,6 @@
+.page-item{
+    display: inline;
+    border: 2px solid white;
+    border-radius: 2px;
+    margin: 0 2px;
+}

@@ -6,9 +6,7 @@ function Cabecalho() {
             <h1>Meu primeiro projeto React</h1>
             <Link to={'/tarefas'}>Tarefas</Link>
             <br />
-            <Link to={'/consulta-ram'}>Consulta Rick and Morty</Link>
-            <br/>
-            <Link to={'/consulta-ram/consulta_id'}>Consuta do personagem</Link>
+            <Link to={'/consulta-ram'}>Consulta personagem</Link>
             <Outlet />
         </>
     );
